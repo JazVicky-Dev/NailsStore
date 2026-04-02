@@ -1,0 +1,450 @@
+.gallery-page {
+    min-height: 100vh;
+    background:
+            radial-gradient(circle at top left, rgba(255, 241, 247, 0.95), transparent 30%),
+            radial-gradient(circle at 84% 16%, rgba(248, 220, 231, 0.5), transparent 24%),
+            linear-gradient(135deg, #fffafc 0%, #fdf3f7 50%, #f8e9f0 100%);
+    padding: 120px 24px 0;
+    overflow: hidden;
+}
+
+.gallery-header {
+    max-width: 1180px;
+    margin: 0 auto 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 24px;
+}
+
+.gallery-header-left {
+    max-width: 620px;
+}
+
+.gallery-header-left h1 {
+    font-size: 40px;
+    line-height: 1.02;
+    letter-spacing: -1.2px;
+    color: #2b1722;
+    margin: 16px 0 12px;
+}
+
+.gallery-header-left p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #6d5963;
+    max-width: 520px;
+}
+
+.gallery-cta-button {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 18px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #2f1f28 0%, #3b2631 100%);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-cta-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-120%);
+    background: linear-gradient(
+            120deg,
+            transparent 0%,
+            rgba(255,255,255,0.24) 45%,
+            transparent 100%
+    );
+    transition: transform 0.75s ease;
+}
+
+.gallery-cta-button:hover::before {
+    transform: translateX(120%);
+}
+
+.gallery-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 30px rgba(47, 31, 40, 0.16);
+}
+
+.gallery-cta-button.secondary {
+    background: rgba(255, 255, 255, 0.72);
+    color: #8a4f68;
+    border: 1px solid #d9b7c7;
+    box-shadow: none;
+}
+
+.gallery-filters {
+    max-width: 1180px;
+    margin: 0 auto 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery-filter {
+    position: relative;
+    overflow: hidden;
+    padding: 9px 15px;
+    border-radius: 999px;
+    border: 1px solid #ead3dd;
+    background: rgba(255, 255, 255, 0.72);
+    color: #8a4f68;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-filter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-120%);
+    background: linear-gradient(
+            120deg,
+            transparent 0%,
+            rgba(255,255,255,0.38) 45%,
+            transparent 100%
+    );
+    transition: transform 0.7s ease;
+}
+
+.gallery-filter:hover::before {
+    transform: translateX(120%);
+}
+
+.gallery-filter:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(113, 74, 92, 0.08);
+}
+
+.gallery-filter.active {
+    background: #2f1f28;
+    color: white;
+    border-color: #2f1f28;
+}
+
+.gallery-masonry {
+    max-width: 1180px;
+    margin: 0 auto 42px;
+    columns: 4 220px;
+    column-gap: 18px;
+}
+
+.pin-card {
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 18px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow:
+            0 16px 34px rgba(113, 74, 92, 0.08),
+            inset 0 1px 0 rgba(255,255,255,0.72);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.pin-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            180deg,
+            rgba(255,255,255,0) 0%,
+            rgba(47, 31, 40, 0.06) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.pin-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow:
+            0 24px 48px rgba(113, 74, 92, 0.14),
+            0 0 0 1px rgba(217, 140, 171, 0.12);
+    border-color: rgba(236, 189, 208, 0.85);
+}
+
+.pin-card:hover::after {
+    opacity: 1;
+}
+
+.pin-visual {
+    position: relative;
+    background: linear-gradient(135deg, #f8dce7 0%, #fdf1f6 45%, #f5d3e0 100%);
+    overflow: hidden;
+    transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.pin-card:hover .pin-visual {
+    transform: scale(1.035);
+    filter: saturate(1.05);
+}
+
+.pin-sm {
+    height: 180px;
+}
+
+.pin-md {
+    height: 240px;
+}
+
+.pin-lg {
+    height: 320px;
+}
+
+.pin-tech-line {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 72px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(217, 140, 171, 0.62), transparent);
+    z-index: 2;
+}
+
+.pin-tech-dot {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #f6cddd 0%, #d98cab 100%);
+    box-shadow: 0 0 18px rgba(217, 140, 171, 0.38);
+    z-index: 2;
+    animation: pulsePinDot 3.2s ease-in-out infinite;
+}
+
+.pin-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+            linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px);
+    background-size: 26px 26px;
+    opacity: 0.26;
+    pointer-events: none;
+}
+
+.pin-content {
+    position: relative;
+    padding: 14px 14px 16px;
+    transition: transform 0.35s ease;
+}
+
+.pin-card:hover .pin-content {
+    transform: translateY(-2px);
+}
+
+.pin-category {
+    display: inline-flex;
+    margin-bottom: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #f8dce7;
+    color: #8a4f68;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pin-content h3 {
+    font-size: 20px;
+    line-height: 1.08;
+    color: #2f1f28;
+    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+}
+
+.pin-link {
+    text-decoration: none;
+    color: #8a4f68;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pin-link::after {
+    content: "→";
+    transition: transform 0.25s ease;
+}
+
+.pin-link:hover {
+    opacity: 0.82;
+}
+
+.pin-link:hover::after {
+    transform: translateX(4px);
+}
+
+.pin-shape {
+    position: absolute;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.42);
+    transition: transform 0.45s ease;
+}
+
+.pin-card:hover .pin-shape-one {
+    transform: translate(6px, -6px);
+}
+
+.pin-card:hover .pin-shape-two {
+    transform: translate(-6px, 6px);
+}
+
+.pin-card:hover .pin-shape-three {
+    transform: translate(-4px, -4px);
+}
+
+.pin-shape-one {
+    width: 140px;
+    height: 140px;
+    top: -45px;
+    left: -18px;
+}
+
+.pin-shape-two {
+    width: 96px;
+    height: 96px;
+    right: 16px;
+    top: 44px;
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.pin-shape-three {
+    width: 120px;
+    height: 120px;
+    bottom: -50px;
+    right: -16px;
+}
+
+.gallery-bottom-cta {
+    position: relative;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 0 42px;
+    text-align: center;
+}
+
+.gallery-bottom-glow {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 90px;
+    background: radial-gradient(circle, rgba(248, 220, 231, 0.3), transparent 70%);
+    filter: blur(22px);
+    pointer-events: none;
+}
+
+.gallery-bottom-cta h2 {
+    font-size: 30px;
+    line-height: 1.08;
+    color: #2f1f28;
+    margin-bottom: 10px;
+}
+
+.gallery-bottom-cta p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #6f5a64;
+    margin-bottom: 18px;
+}
+
+/* entrance */
+.gallery-fade-up,
+.pin-fade-up {
+    opacity: 0;
+    transform: translateY(22px);
+    animation: galleryFadeUp 0.78s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.08s;
+}
+
+.delay-2 {
+    animation-delay: 0.18s;
+}
+
+.delay-3 {
+    animation-delay: 0.28s;
+}
+
+.delay-4 {
+    animation-delay: 0.38s;
+}
+
+@keyframes galleryFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulsePinDot {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 18px rgba(217, 140, 171, 0.38);
+    }
+    50% {
+        transform: scale(1.18);
+        box-shadow: 0 0 24px rgba(217, 140, 171, 0.52);
+    }
+}
+
+@media (max-width: 1100px) {
+    .gallery-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gallery-masonry {
+        columns: 3 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-page {
+        padding: 105px 18px 0;
+    }
+
+    .gallery-header-left h1 {
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+
+    .gallery-header-left p {
+        font-size: 16px;
+    }
+
+    .gallery-masonry {
+        columns: 2 160px;
+        column-gap: 14px;
+    }
+
+    .pin-card {
+        margin-bottom: 14px;
+        border-radius: 20px;
+    }
+
+    .pin-content h3 {
+        font-size: 18px;
+    }
+}
