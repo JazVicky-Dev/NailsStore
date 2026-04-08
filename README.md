@@ -94,3 +94,9 @@ Levantar PostgreSQL con Docker:docker compose up -d
 ## Autoras
 	•	Jazmín Brunelli
 	•	Victoria Ledezma
+
+
+
+imagenes:
+<img width="1512" height="764" alt="Captura de pantalla 2026-04-08 a la(s) 20 41 31" src="https://github.com/user-attachments/assets/37211056-8d42-4edb-ac65-c13c22d01969" />
+
